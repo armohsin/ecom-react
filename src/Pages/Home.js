@@ -1,9 +1,7 @@
 import React from 'react'
 import '../Style/Home.css'
 import LogoSlider from '../Components/CompanySlider'
-import Hoodie from '../Images/hoodie.svg'
 import ImageGrid from '../Components/Gallery'
-import SimpleProdCard from '../Components/SimpleProdCard'
 import ProductSlider from '../Components/ProductSlider'
 
 const Home = () => {
