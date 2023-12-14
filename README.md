@@ -17,10 +17,6 @@ ECOM-React is a UI Template of an online store made by React 18.2.0 and Tailwind
   <li>Hero</li>
 </ol>
 
-##
+## Screenshot
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<img src="./src/Images/screencapture-localhost-3000-2023-12-14-23_09_40.png" alt="Italian Trulli">
