@@ -3,10 +3,27 @@ import '../Style/Shop.css';
 import { Link } from 'react-router-dom';
 
 const Shop = () => {
+    // gender radio
     const [selectedSex, setSelectedSex] = useState(null);
 
     const handleSexChange = (value) => {
         setSelectedSex(value);
+    };
+    // Sizes radio
+    const [selectedSize, setSelectedSize] = useState(null);
+
+    const handleSizeChange = (value) => {
+        setSelectedSize(value);
+    };
+    //Price range
+    const [priceRange, setPriceRange] = useState([50, 150]); // Initial price range
+
+    const handlePriceRangeChange = (event) => {
+        setPriceRange([parseInt(event.target.value), priceRange[1]]);
+    };
+
+    const handlePriceRangeChangeEnd = (event) => {
+        setPriceRange([priceRange[0], parseInt(event.target.value)]);
     };
     // Sample data array (replace it with your actual data)
     const shopItems = [
@@ -60,11 +77,12 @@ const Shop = () => {
                 <h1 className='text-5xl font-bold text-blue-600'>Shop</h1>
             </div>
             <div className="grid grid-cols-1 gap-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 lg:gap-8 p-4 md:p-8">
-                <div className="rounded-lg bg-gray-100 p-8">
+                <div className="rounded-xl bg-gray-100 p-8 mb-4">
                     <h1 className='text-xl text-blue-700 font-bold'>Filters</h1>
                     {/* GENDER */}
-                    <h1 className='text-lg text-blue-600 mt-4 mb-4'>Gender</h1>
+
                     <div className="flex  ">
+                        <h1 className='text-lg text-blue-600 mt-4 m-4'>Gender</h1>
                         <div className="flex items-center mr-4">
                             <input
                                 type="radio"
@@ -90,6 +108,81 @@ const Shop = () => {
                             />
                             <label htmlFor="female" className="ml-2 text-sm text-gray-700">Female</label>
                         </div>
+                    </div>
+                    {/* SIZES */}
+                    <div className="flex ">
+                        <h1 className='text-lg text-blue-600 mt-4 m-4'>Sizes</h1>
+                        <div className="flex items-center mr-4">
+                            <input
+                                type="radio"
+                                id="size-s"
+                                name="size"
+                                value="S"
+                                checked={selectedSize === 'S'}
+                                onChange={() => handleSizeChange('S')}
+                                className="form-radio h-5 w-5 text-blue-600"
+                            />
+                            <label htmlFor="size-s" className="ml-2 text-sm text-gray-700">S</label>
+                        </div>
+
+                        <div className="flex items-center mr-4">
+                            <input
+                                type="radio"
+                                id="size-m"
+                                name="size"
+                                value="M"
+                                checked={selectedSize === 'M'}
+                                onChange={() => handleSizeChange('M')}
+                                className="form-radio h-5 w-5 text-blue-600"
+                            />
+                            <label htmlFor="size-m" className="ml-2 text-sm text-gray-700">M</label>
+                        </div>
+
+                        <div className="flex items-center mr-4">
+                            <input
+                                type="radio"
+                                id="size-l"
+                                name="size"
+                                value="L"
+                                checked={selectedSize === 'L'}
+                                onChange={() => handleSizeChange('L')}
+                                className="form-radio h-5 w-5 text-blue-600"
+                            />
+                            <label htmlFor="size-l" className="ml-2 text-sm text-gray-700">L</label>
+                        </div>
+
+                        <div className="flex items-center">
+                            <input
+                                type="radio"
+                                id="size-xl"
+                                name="size"
+                                value="XL"
+                                checked={selectedSize === 'XL'}
+                                onChange={() => handleSizeChange('XL')}
+                                className="form-radio h-5 w-5 text-blue-600"
+                            />
+                            <label htmlFor="size-xl" className="ml-2 text-sm text-gray-700">XL</label>
+                        </div>
+                    </div>
+                    {/* Price range */}
+                    <h1 className='text-lg text-blue-600 mt-4 m-4'>Price Range</h1>
+
+                    <div className="flex ml-2 ">
+                        <input
+                            type="range"
+                            id="price-range"
+                            name="price-range"
+                            min={0}
+                            max={200} // Adjust the maximum value as needed
+                            step={10} // Adjust the step value as needed
+                            value={priceRange[0]}
+                            onChange={handlePriceRangeChange}
+                            onMouseUp={handlePriceRangeChangeEnd}
+                            className="appearance-none w-64 h-5 rounded-full overflow-hidden bg-blue-200 outline-none focus:outline-none"
+                        />
+                        <span className="ml-2 text-sm text-gray-700">${priceRange[0]}</span>
+                        <span className="mx-2 text-sm text-gray-700">-</span>
+                        <span className="text-sm text-gray-700">${priceRange[1]}</span>
                     </div>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:col-span-2 gap-4">
