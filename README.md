@@ -5,6 +5,7 @@ ECOM-React is a UI Template of an online store made by React 18.2.0 and Tailwind
 ## Current Pages
 <ol>
   <li>Responsive Home Page</li>
+  <li>Responsive Shop Page</li>
 </ol>
 
 ## Current Components
@@ -15,6 +16,8 @@ ECOM-React is a UI Template of an online store made by React 18.2.0 and Tailwind
   <li>Product Card</li>
   <li>Product Slider</li>
   <li>Hero</li>
+  <li>Shop Gallery</li>
+  <li>Shop Page Filter</li>
 </ol>
 
 ## Screenshot
