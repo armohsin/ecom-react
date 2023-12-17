@@ -2,6 +2,7 @@
 // src/App.js
 import React, { useState, useEffect } from "react";
 import Logo from '../Images/Logo.png'
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [scrolling, setScrolling] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,18 +37,18 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="text-2xl font-bold text-gray-800"><img  width={150} height={150} src={Logo} /></div>
           <div className="hidden md:flex space-x-4">
-            <a href="#" className="text-gray-800 font-bold hover:text-blue-600 ml-2">
+            <Link to='/' className="text-gray-800 font-bold hover:text-blue-600 ml-2">
               Home
-            </a>
-            <a href="#" className="text-gray-800 font-bold hover:text-blue-600 ml-2">
-              About
-            </a>
-            <a href="#" className="text-gray-800 font-bold hover:text-blue-600 ml-2">
-              Services
-            </a>
-            <a href="#" className="text-gray-800 font-bold hover:text-blue-600 ml-2">
+            </Link>
+            <Link to='/shop' className="text-gray-800 font-bold hover:text-blue-600 ml-2">
+              Shop
+            </Link>
+            <Link to="check-out" className="text-gray-800 font-bold hover:text-blue-600 ml-2">
+              Check Out
+            </Link>
+            <Link to="/contact-us" className="text-gray-800 font-bold hover:text-blue-600 ml-2">
               Contact
-            </a>
+            </Link>
           </div>
           <div className="md:hidden">
             <button
@@ -74,20 +75,20 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden">
+          <div className="md:hidden bg-gray-50">
             <div className="flex flex-col mt-4 space-y-4">
-              <a href="#" className="text-gray-800 hover:text-gray-600">
-                Home
-              </a>
-              <a href="#" className="text-gray-800 hover:text-gray-600">
-                About
-              </a>
-              <a href="#" className="text-gray-800 hover:text-gray-600">
-                Services
-              </a>
-              <a href="#" className="text-gray-800 hover:text-gray-600">
-                Contact
-              </a>
+            <Link to='/' className="text-gray-800 font-bold hover:text-blue-600 ml-2">
+              Home
+            </Link>
+            <Link to='/shop' className="text-gray-800 font-bold hover:text-blue-600 ml-2">
+              Shop
+            </Link>
+            <Link to="check-out" className="text-gray-800 font-bold hover:text-blue-600 ml-2">
+              Check Out
+            </Link>
+            <Link to="/contact-us" className="text-gray-800 font-bold hover:text-blue-600 ml-2">
+              Contact
+            </Link>
             </div>
           </div>
         )}
