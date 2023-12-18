@@ -82,7 +82,7 @@ const Shop = () => {
                     {/* GENDER */}
 
                     <div className="flex  ">
-                        <h1 className='text-lg text-blue-600 mt-4 m-4'>Gender</h1>
+                        <h1 className='text-lg text-blue-600 mt-4 m-4'>Genders</h1>
                         <div className="flex items-center mr-4">
                             <input
                                 type="radio"
