@@ -46,7 +46,7 @@ const ProductSlider = () => {
             name: "Hoodie",
             discountedPrice: "$149",
             actualPrice: "$199",
-        },
+        }
        
         
     ];
